@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        
+        <form action="#" method="post">
+            <h2>Entrada</h2>
+            <input type="text" placeholder="Nombre de usuario" name="usuario">
+            <input type="password" placeholder="Contraseña" name="password">
+            <input type="submit" value="Entrar">            
+        </form>
+        
+    </main>  
+</body>
+</html>
+
+<?php
+
+    include('includes/utilerias.php');
+
+    $usuario = $_POST['usuario'];
+    $password = $_POST['password'];
+
+    if($usuario == "admin" && $password == "admin"){
+        redireccionar('Bienvenido Administrador','index.php');.
+        header("Location: inicio.php");
+        $_SESSION['usuario'] = 'administrador';
+    }
+    else{
+        echo 'Datos incorrectos, favor de volver a introducir su información';
+    }
+
+?>
